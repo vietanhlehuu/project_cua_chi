@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Trang chủ</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/place1">Vị tr&#237; 1</a></li>
+            <li><a href="/place2">Vị tr&#237; 2</a></li>
+            <li><a href="/place3">Vị tr&#237; 3</a></li>
+
+            <li><a href="/controls/Create">Điều khiển</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container body-content">
+      <a href="/place1/temp">Nhiệt độ</a>
+      <a href="/place1/pH">pH</a>
+      <a href="/place1/TDS">TDS</a>
+      <h2>Chất lượng nước vị trí 1</h2>
+
+      <form action="/place1" method="get">
+        <p>
+          Ngày: <input id="ngay" name="ngay" type="text" value="" /> Tháng:
+          <input id="thang" name="thang" type="text" value="" /> Năm:
+          <input id="nam" name="nam" type="text" value="" />
+          <input type="submit" value="Tìm kiếm" />
+        </p>
+      </form>
+      <table class="table">
+        <tr>
+          <th>Thời gian đo</th>
+          <th>Nhiệt độ (oC)</th>
+          <th>pH</th>
+          <th>TDS (mg/l)</th>
+          <th></th>
+        </tr>
+
+        <tr>
+          <td>1/5/2021 3:10:01 PM</td>
+          <td>26</td>
+          <td>8</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>1/5/2021 3:27:07 PM</td>
+          <td>26</td>
+          <td>8</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>1/5/2021 3:37:18 PM</td>
+          <td>25</td>
+          <td>8</td>
+          <td>60</td>
+        </tr>
+      </table>
+
+      <hr />
+      <footer>
+        <p>&copy; LVTN - 2021</p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"
+      integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

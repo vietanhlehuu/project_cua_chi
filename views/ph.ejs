@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"
+      integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script>
+      var gio = new Array();
+      var ph = new Array();
+
+      const items = [
+        {
+          hour: new Date(2021, 1, 4, 21, 33),
+          ph: 7.0,
+          temp: 39.0,
+          TDS: 60.0,
+        },
+        {
+          hour: new Date(2021, 1, 4, 21, 35),
+          ph: 8.0,
+          temp: 39.0,
+          TDS: 60.0,
+        },
+        {
+          hour: new Date(2021, 1, 4, 21, 36),
+          ph: 7.5,
+          temp: 39.0,
+          TDS: 60.0,
+        },
+        {
+          hour: new Date(2021, 1, 4, 21, 38),
+          ph: 7.3,
+          temp: 39.0,
+          TDS: 60.0,
+        },
+      ];
+
+      items.forEach((item) => {
+        gio.push(item.hour);
+        ph.push(item.ph);
+      });
+    </script>
+    <canvas id="myChart"></canvas>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"
+      integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myLineChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: gio,
+          datasets: [
+            {
+              label: "pH",
+              backgroundColor: "rgb(25, 99, 13)",
+              borderColor: "rgb(255, 78, 13)",
+              data: ph,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
